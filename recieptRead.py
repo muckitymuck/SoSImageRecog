@@ -5,5 +5,5 @@ except ImportError:
 import pytesseract
 
 
-print(pytesseract.image_to_string(Image.open('test.png')))
+print(pytesseract.image_to_string(Image.open('reciept.jpg')))
 

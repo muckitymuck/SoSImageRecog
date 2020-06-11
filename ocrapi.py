@@ -12,4 +12,10 @@ api = ocrspace.API('7528f1b76188957')
 # api.ocr_file('receipt2.jpg')
 
 # URL
-api.ocr_url('https://ocr.space/Content/Images/receipt-ocr-original.jpg')
+# api.ocr_url('https://ocr.space/Content/Images/receipt-ocr-original.jpg')
+
+urlReq: object = (api.ocr_url('https://ocr.space/Content/Images/receipt-ocr-original.jpg'))
+
+
+
+print(urlReq)

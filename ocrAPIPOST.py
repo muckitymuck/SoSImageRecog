@@ -1,4 +1,6 @@
 import requests
+import pprint
+import pprintjson
 
 
 def ocr_space_file(filename, overlay=False, api_key='7528f1b76188957', language='eng', istable=True):
@@ -30,7 +32,7 @@ def ocr_space_file(filename, overlay=False, api_key='7528f1b76188957', language=
     return r.content.decode()
 
 
-def ocr_space_url(url, overlay=False, api_key='7528f1b76188957', language='eng', istable=True):
+def ocr_space_url(url, overlay=False, api_key='7528f1b76188957', language='eng', istable=True,  ocrengine=2):
     """ OCR.space API request with remote file.
         Python3.5 - not tested on 2.7
 
@@ -51,6 +53,7 @@ def ocr_space_url(url, overlay=False, api_key='7528f1b76188957', language='eng',
                'apikey': api_key,
                'language': language,
                'istable': istable,
+               'ocrengine': ocrengine,
                }
     r = requests.post('https://api.ocr.space/parse/image',
                       data=payload,
@@ -58,5 +61,5 @@ def ocr_space_url(url, overlay=False, api_key='7528f1b76188957', language='eng',
     return r.content.decode()
 
 
-print(ocr_space_file('receipt2.jpg'))
+#  print(ocr_space_file('receipt2.jpg'))
 print(ocr_space_url('https://ocr.space/Content/Images/receipt-ocr-original.jpg'))
